@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CF91A73E5F600E84282 /* AppDelegate.swift */; };
+		01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CFB1A73E5F600E84282 /* ViewController.swift */; };
+		01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C90CFD1A73E5F600E84282 /* Main.storyboard */; };
+		01C90D011A73E5F600E84282 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C90D001A73E5F600E84282 /* Images.xcassets */; };
+		01C90D041A73E5F600E84282 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C90D021A73E5F600E84282 /* LaunchScreen.xib */; };
+		01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01C90D0A1A73E5F600E84282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01C90CEC1A73E5F500E84282 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01C90CF31A73E5F500E84282;
+			remoteInfo = Zahlenraten;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01C90CF41A73E5F600E84282 /* Zahlenraten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zahlenraten.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01C90CF81A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C90CF91A73E5F600E84282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01C90CFB1A73E5F600E84282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01C90CFE1A73E5F600E84282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01C90D001A73E5F600E84282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		01C90D031A73E5F600E84282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		01C90D091A73E5F600E84282 /* ZahlenratenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZahlenratenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01C90D0E1A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZahlenratenTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01C90CF11A73E5F500E84282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01C90D061A73E5F600E84282 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01C90CEB1A73E5F500E84282 = {
+			isa = PBXGroup;
+			children = (
+				01C90CF61A73E5F600E84282 /* Zahlenraten */,
+				01C90D0C1A73E5F600E84282 /* ZahlenratenTests */,
+				01C90CF51A73E5F600E84282 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01C90CF51A73E5F600E84282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01C90CF41A73E5F600E84282 /* Zahlenraten.app */,
+				01C90D091A73E5F600E84282 /* ZahlenratenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01C90CF61A73E5F600E84282 /* Zahlenraten */ = {
+			isa = PBXGroup;
+			children = (
+				01C90CF91A73E5F600E84282 /* AppDelegate.swift */,
+				01C90CFB1A73E5F600E84282 /* ViewController.swift */,
+				01C90CFD1A73E5F600E84282 /* Main.storyboard */,
+				01C90D001A73E5F600E84282 /* Images.xcassets */,
+				01C90D021A73E5F600E84282 /* LaunchScreen.xib */,
+				01C90CF71A73E5F600E84282 /* Supporting Files */,
+			);
+			path = Zahlenraten;
+			sourceTree = "<group>";
+		};
+		01C90CF71A73E5F600E84282 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01C90CF81A73E5F600E84282 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01C90D0C1A73E5F600E84282 /* ZahlenratenTests */ = {
+			isa = PBXGroup;
+			children = (
+				01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */,
+				01C90D0D1A73E5F600E84282 /* Supporting Files */,
+			);
+			path = ZahlenratenTests;
+			sourceTree = "<group>";
+		};
+		01C90D0D1A73E5F600E84282 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01C90D0E1A73E5F600E84282 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01C90CF31A73E5F500E84282 /* Zahlenraten */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01C90D131A73E5F600E84282 /* Build configuration list for PBXNativeTarget "Zahlenraten" */;
+			buildPhases = (
+				01C90CF01A73E5F500E84282 /* Sources */,
+				01C90CF11A73E5F500E84282 /* Frameworks */,
+				01C90CF21A73E5F500E84282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zahlenraten;
+			productName = Zahlenraten;
+			productReference = 01C90CF41A73E5F600E84282 /* Zahlenraten.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01C90D081A73E5F600E84282 /* ZahlenratenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01C90D161A73E5F600E84282 /* Build configuration list for PBXNativeTarget "ZahlenratenTests" */;
+			buildPhases = (
+				01C90D051A73E5F600E84282 /* Sources */,
+				01C90D061A73E5F600E84282 /* Frameworks */,
+				01C90D071A73E5F600E84282 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01C90D0B1A73E5F600E84282 /* PBXTargetDependency */,
+			);
+			name = ZahlenratenTests;
+			productName = ZahlenratenTests;
+			productReference = 01C90D091A73E5F600E84282 /* ZahlenratenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01C90CEC1A73E5F500E84282 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Frank Meies";
+				TargetAttributes = {
+					01C90CF31A73E5F500E84282 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					01C90D081A73E5F600E84282 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 01C90CF31A73E5F500E84282;
+					};
+				};
+			};
+			buildConfigurationList = 01C90CEF1A73E5F500E84282 /* Build configuration list for PBXProject "Zahlenraten" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01C90CEB1A73E5F500E84282;
+			productRefGroup = 01C90CF51A73E5F600E84282 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01C90CF31A73E5F500E84282 /* Zahlenraten */,
+				01C90D081A73E5F600E84282 /* ZahlenratenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01C90CF21A73E5F500E84282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */,
+				01C90D041A73E5F600E84282 /* LaunchScreen.xib in Resources */,
+				01C90D011A73E5F600E84282 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01C90D071A73E5F600E84282 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01C90CF01A73E5F500E84282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */,
+				01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01C90D051A73E5F600E84282 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01C90D0B1A73E5F600E84282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01C90CF31A73E5F500E84282 /* Zahlenraten */;
+			targetProxy = 01C90D0A1A73E5F600E84282 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01C90CFD1A73E5F600E84282 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01C90CFE1A73E5F600E84282 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01C90D021A73E5F600E84282 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01C90D031A73E5F600E84282 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01C90D111A73E5F600E84282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01C90D121A73E5F600E84282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01C90D141A73E5F600E84282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Zahlenraten/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01C90D151A73E5F600E84282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Zahlenraten/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		01C90D171A73E5F600E84282 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZahlenratenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zahlenraten.app/Zahlenraten";
+			};
+			name = Debug;
+		};
+		01C90D181A73E5F600E84282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZahlenratenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zahlenraten.app/Zahlenraten";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01C90CEF1A73E5F500E84282 /* Build configuration list for PBXProject "Zahlenraten" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01C90D111A73E5F600E84282 /* Debug */,
+				01C90D121A73E5F600E84282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01C90D131A73E5F600E84282 /* Build configuration list for PBXNativeTarget "Zahlenraten" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01C90D141A73E5F600E84282 /* Debug */,
+				01C90D151A73E5F600E84282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01C90D161A73E5F600E84282 /* Build configuration list for PBXNativeTarget "ZahlenratenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01C90D171A73E5F600E84282 /* Debug */,
+				01C90D181A73E5F600E84282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01C90CEC1A73E5F500E84282 /* Project object */;
+}
