@@ -26,16 +26,12 @@ class ZahlenratenTests: XCTestCase {
         game.reset(10, obergrenze: 100)
         game.result = 47
         XCTAssert(game.status == 0, "Pass")
-        game.guess(101)
-        XCTAssert(game.status == 4, "Pass")
-        game.guess(9)
-        XCTAssert(game.status == 4, "Pass")
-        game.guess(10)
-        XCTAssert(game.status == 1, "Pass")
-        game.guess(100)
-        XCTAssert(game.status == 2, "Pass")
-        game.guess(47)
-        XCTAssert(game.status == 3, "Pass")
+
+        var dataProvider: [UInt : UInt] = [101: 4, 9: 4, 10: 1, 100: 2, 47: 3]
+        for (number, expected) in dataProvider {
+            game.guess(number)
+            XCTAssert(game.status == expected, "Pass")
+        }
     }
     
     func testPerformanceExample() {
