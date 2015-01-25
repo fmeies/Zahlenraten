@@ -48,6 +48,13 @@ class ViewController: UIViewController {
         }
     }
 	
+	@IBAction func infoPressed() {
+		let alertController = UIAlertController(title: "Zahlenraten", message: "(c) Frank & Emma Meies", preferredStyle: UIAlertControllerStyle.Alert)
+		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+  
+		self.presentViewController(alertController, animated: true, completion: nil)
+	}
+	
     func nextGuess(){
 		var inputInt : UInt = 0
 		if let input = inputField.text?.toInt() {

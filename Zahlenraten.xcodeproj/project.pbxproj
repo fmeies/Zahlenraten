@@ -67,6 +67,7 @@
 				01C90CF51A73E5F600E84282 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		01C90CF51A73E5F600E84282 /* Products */ = {
 			isa = PBXGroup;
