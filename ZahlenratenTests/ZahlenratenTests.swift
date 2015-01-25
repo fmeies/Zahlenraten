@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 class ZahlenratenTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,9 +21,21 @@ class ZahlenratenTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testGame() {
+        var game: Game = Game()
+        game.reset(10, obergrenze: 100)
+        game.result = 47
+        XCTAssert(game.status == 0, "Pass")
+        game.guess(101)
+        XCTAssert(game.status == 4, "Pass")
+        game.guess(9)
+        XCTAssert(game.status == 4, "Pass")
+        game.guess(10)
+        XCTAssert(game.status == 1, "Pass")
+        game.guess(100)
+        XCTAssert(game.status == 2, "Pass")
+        game.guess(47)
+        XCTAssert(game.status == 3, "Pass")
     }
     
     func testPerformanceExample() {

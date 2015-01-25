@@ -25,17 +25,18 @@ class Game{
     }
     
     func guess(value: UInt){
+        if (value < untergrenze || value > obergrenze){
+            status = 4
+            return
+        }
+        
         if(value < result){
             status = 1
-            ++moves
         } else if(value > result){
             status = 2
-            ++moves
         } else if (value == result){
             status = 3
-            ++moves
-        } else if (value < untergrenze || value > obergrenze){
-            status = 4
         }
+        ++moves
     }
 }

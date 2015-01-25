@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0140C96B1A753E4400489A60 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
 		01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CF91A73E5F600E84282 /* AppDelegate.swift */; };
 		01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CFB1A73E5F600E84282 /* ViewController.swift */; };
 		01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C90CFD1A73E5F600E84282 /* Main.storyboard */; };
@@ -35,7 +36,7 @@
 		01C90D031A73E5F600E84282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		01C90D091A73E5F600E84282 /* ZahlenratenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZahlenratenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90D0E1A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZahlenratenTests.swift; sourceTree = "<group>"; };
+		01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZahlenratenTests.swift; sourceTree = "<group>"; usesTabs = 0; };
 		01CBDC701A7507A100CAF472 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		01CBDC741A7519B700CAF472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */,
+				0140C96B1A753E4400489A60 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
