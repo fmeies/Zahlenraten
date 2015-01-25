@@ -10,9 +10,10 @@
 		01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CF91A73E5F600E84282 /* AppDelegate.swift */; };
 		01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CFB1A73E5F600E84282 /* ViewController.swift */; };
 		01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C90CFD1A73E5F600E84282 /* Main.storyboard */; };
-		01C90D011A73E5F600E84282 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C90D001A73E5F600E84282 /* Images.xcassets */; };
 		01C90D041A73E5F600E84282 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C90D021A73E5F600E84282 /* LaunchScreen.xib */; };
 		01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */; };
+		01CBDC711A7507A100CAF472 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
+		01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CBDC741A7519B700CAF472 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		01C90CF41A73E5F600E84282 /* Zahlenraten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zahlenraten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90CF81A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C90CF91A73E5F600E84282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01C90CFB1A73E5F600E84282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01C90CFB1A73E5F600E84282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		01C90CFE1A73E5F600E84282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		01C90D001A73E5F600E84282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		01C90D031A73E5F600E84282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		01C90D091A73E5F600E84282 /* ZahlenratenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZahlenratenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90D0E1A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZahlenratenTests.swift; sourceTree = "<group>"; };
+		01CBDC701A7507A100CAF472 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		01CBDC741A7519B700CAF472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +79,11 @@
 		01C90CF61A73E5F600E84282 /* Zahlenraten */ = {
 			isa = PBXGroup;
 			children = (
+				01CBDC741A7519B700CAF472 /* Images.xcassets */,
 				01C90CF91A73E5F600E84282 /* AppDelegate.swift */,
 				01C90CFB1A73E5F600E84282 /* ViewController.swift */,
+				01CBDC701A7507A100CAF472 /* Game.swift */,
 				01C90CFD1A73E5F600E84282 /* Main.storyboard */,
-				01C90D001A73E5F600E84282 /* Images.xcassets */,
 				01C90D021A73E5F600E84282 /* LaunchScreen.xib */,
 				01C90CF71A73E5F600E84282 /* Supporting Files */,
 			);
@@ -192,9 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */,
 				01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */,
 				01C90D041A73E5F600E84282 /* LaunchScreen.xib in Resources */,
-				01C90D011A73E5F600E84282 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */,
+				01CBDC711A7507A100CAF472 /* Game.swift in Sources */,
 				01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +409,7 @@
 				01C90D151A73E5F600E84282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01C90D161A73E5F600E84282 /* Build configuration list for PBXNativeTarget "ZahlenratenTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				01C90D181A73E5F600E84282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
