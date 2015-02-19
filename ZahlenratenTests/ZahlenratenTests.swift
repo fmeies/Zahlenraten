@@ -23,7 +23,7 @@ class ZahlenratenTests: XCTestCase {
     
     func testGame() {
         var game: Game = Game()
-        game.reset(10, obergrenze: 100)
+        game.reset(10, upperBoundary: 100)
         game.result = 47
         XCTAssert(game.status == 0, "Pass")
 
@@ -31,6 +31,17 @@ class ZahlenratenTests: XCTestCase {
         for (number, expected) in dataProvider {
             game.guess(number)
             XCTAssert(game.status == expected, "Pass")
+        }
+    }
+
+    func testBoundaries() {
+        var game: Game = Game()
+
+        var dataProvider: [UInt : UInt] = [0: 0, 1: 1, 2: 2, 10: 10]
+        for (lower, upper) in dataProvider {
+            game.reset(lower, upperBoundary: upper)
+            game.guess(lower)
+            XCTAssert(game.status == 3, "Pass")
         }
     }
     

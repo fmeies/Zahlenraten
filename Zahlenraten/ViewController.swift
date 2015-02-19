@@ -90,9 +90,16 @@ class ViewController: UIViewController {
 			upperBoundaryField.text = "100"
 			return
 		}
+		
+		if(upperInt < lowerInt) {
+			lowerBoundaryField.text = "1"
+			upperBoundaryField.text = "100"
+			messageLabel.text = "Grenzen falsch angegeben!"
+			return
+		}
 
 		switchMode(true)
-		game.reset(lowerInt, obergrenze: upperInt)
+		game.reset(lowerInt, upperBoundary: upperInt)
 		updateStatus()
     }
 	

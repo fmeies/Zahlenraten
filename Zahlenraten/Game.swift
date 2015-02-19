@@ -12,20 +12,20 @@ class Game{
     
     var status : UInt = 0
     var moves: UInt = 0
-    var untergrenze : UInt = 0
-    var obergrenze : UInt = 0
+    var lowerBoundary : UInt = 0
+    var upperBoundary : UInt = 0
     var result : UInt = 0
     
-    func reset(untergrenze: UInt, obergrenze: UInt){
+    func reset(lowerBoundary: UInt, upperBoundary: UInt){
         status = 0
         moves = 0
-        self.untergrenze = untergrenze
-        self.obergrenze = obergrenze
-        result = UInt(arc4random_uniform(obergrenze - untergrenze + 1))
+        self.lowerBoundary = lowerBoundary
+        self.upperBoundary = upperBoundary
+        result = UInt(arc4random_uniform(upperBoundary - lowerBoundary + 1)) + lowerBoundary
     }
     
     func guess(value: UInt){
-        if (value < untergrenze || value > obergrenze){
+        if (value < lowerBoundary || value > upperBoundary){
             status = 4
             return
         }
