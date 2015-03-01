@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var inputField: UITextField!
@@ -29,7 +29,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+		
+		let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+		recognizer.delegate = self
+		view.addGestureRecognizer(recognizer)
+	}
+
+	func handleTap(recognizer: UITapGestureRecognizer) {
+		// remove keyboard
+		inputField.resignFirstResponder()
+		lowerBoundaryField.resignFirstResponder()
+		upperBoundaryField.resignFirstResponder()
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,7 +53,8 @@ class ViewController: UIViewController {
     
 	@IBAction func buttonPressed() {
         if(inputField.hidden){
-            startGame()
+			startGame()
+			inputField.becomeFirstResponder()
         } else {
             nextGuess()
         }
