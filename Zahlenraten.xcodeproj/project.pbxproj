@@ -59,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0190AA851BA580C9004B6ADD /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				01CBDC741A7519B700CAF472 /* Images.xcassets */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
 		01C90CEB1A73E5F500E84282 = {
 			isa = PBXGroup;
 			children = (
@@ -81,12 +89,12 @@
 		01C90CF61A73E5F600E84282 /* Zahlenraten */ = {
 			isa = PBXGroup;
 			children = (
-				01CBDC741A7519B700CAF472 /* Images.xcassets */,
 				01C90CF91A73E5F600E84282 /* AppDelegate.swift */,
 				01C90CFB1A73E5F600E84282 /* ViewController.swift */,
 				01CBDC701A7507A100CAF472 /* Game.swift */,
 				01C90CFD1A73E5F600E84282 /* Main.storyboard */,
 				01C90D021A73E5F600E84282 /* LaunchScreen.xib */,
+				0190AA851BA580C9004B6ADD /* Ressources */,
 				01C90CF71A73E5F600E84282 /* Supporting Files */,
 			);
 			path = Zahlenraten;
