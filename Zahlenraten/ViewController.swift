@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
 	var game:Game
 	
-	required init(coder aDecoder: NSCoder)
+	required init?(coder aDecoder: NSCoder)
 	{
 		self.game = Game()
 		super.init(coder: aDecoder)
@@ -71,7 +71,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	
     func nextGuess(){
 		var inputInt : UInt = 0
-		if let input = inputField.text?.toInt() {
+		if let input = Int(inputField.text!) {
 			inputInt = UInt(input)
 		}
 		
@@ -89,14 +89,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		var lowerInt : UInt = 0
 		var upperInt : UInt = 0
 		
-		if let lowerInput = lowerBoundaryField.text?.toInt() {
+		if let lowerInput = Int(lowerBoundaryField.text!) {
 			lowerInt = UInt(lowerInput)
 		} else {
 			lowerBoundaryField.text = "1"
 			return
 		}
 		
-		if let upperInput = upperBoundaryField.text?.toInt() {
+		if let upperInput = Int(upperBoundaryField.text!) {
 			upperInt = UInt(upperInput)
 		} else {
 			upperBoundaryField.text = "100"
@@ -129,7 +129,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		var moves = "Jetzt kommt dein " + String(game.moves + 1) + ". Zug"
 		var message = "Bitte die Grenzen beachten!"
 
-		var status : UInt = game.status;
+		let status : UInt = game.status;
 		if(status == 0){
 			message = "Gib eine Zahl ein!"
 		}

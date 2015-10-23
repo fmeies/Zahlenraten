@@ -21,7 +21,8 @@ class Game{
         moves = 0
         self.lowerBoundary = lowerBoundary
         self.upperBoundary = upperBoundary
-        result = UInt(arc4random_uniform(upperBoundary - lowerBoundary + 1)) + lowerBoundary
+		let dist = UInt32(upperBoundary - lowerBoundary + 1)
+        result = UInt(arc4random_uniform(dist)) + lowerBoundary
     }
     
     func guess(value: UInt){
