@@ -20,8 +20,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
 	var game:Game
 	
-	required init?(coder aDecoder: NSCoder)
-	{
+	required init?(coder aDecoder: NSCoder)	{
 		self.game = Game()
 		super.init(coder: aDecoder)
 	}
