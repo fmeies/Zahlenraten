@@ -29,7 +29,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 		
-		let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+		let recognizer = UITapGestureRecognizer(target: self, action:#selector(ViewController.handleTap(_:)))
 		recognizer.delegate = self
 		view.addGestureRecognizer(recognizer)
 	}

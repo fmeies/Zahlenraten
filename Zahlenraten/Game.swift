@@ -38,6 +38,6 @@ class Game{
         } else if (value == result){
             status = 3
         }
-        ++moves
+        moves += 1
     }
 }
