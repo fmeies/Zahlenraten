@@ -16,7 +16,7 @@ class Game{
     var upperBoundary : UInt = 0
     var result : UInt = 0
     
-    func reset(lowerBoundary: UInt, upperBoundary: UInt){
+    func reset(_ lowerBoundary: UInt, upperBoundary: UInt){
         status = 0
         moves = 0
         self.lowerBoundary = lowerBoundary
@@ -25,7 +25,7 @@ class Game{
         result = UInt(arc4random_uniform(dist)) + lowerBoundary
     }
     
-    func guess(value: UInt){
+    func guess(_ value: UInt){
         if (value < lowerBoundary || value > upperBoundary){
             status = 4
             return

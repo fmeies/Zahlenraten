@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		view.addGestureRecognizer(recognizer)
 	}
 
-	func handleTap(recognizer: UITapGestureRecognizer) {
+	func handleTap(_ recognizer: UITapGestureRecognizer) {
 		// remove keyboard
 		inputField.resignFirstResponder()
 		lowerBoundaryField.resignFirstResponder()
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   	}
     
 	@IBAction func buttonPressed() {
-        if(inputField.hidden){
+        if(inputField.isHidden){
 			startGame()
 			inputField.becomeFirstResponder()
         } else {
@@ -114,12 +114,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		updateStatus()
     }
 	
-	func switchMode(startGame : Bool){
-		lowerBoundaryField.hidden = startGame
-		upperBoundaryField.hidden = startGame
-		inputField.hidden = !startGame
-		inputField.enabled = startGame
-		inputButton.enabled = true
+	func switchMode(_ startGame : Bool){
+		lowerBoundaryField.isHidden = startGame
+		upperBoundaryField.isHidden = startGame
+		inputField.isHidden = !startGame
+		inputField.isEnabled = startGame
+		inputButton.isEnabled = true
 	}
 	
 	func updateStatus() {
@@ -139,8 +139,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		} else if (status == 3){
 			moves = "Juhu, du hast gewonnen!!!"
 			message =  "Du hast " + String(game.moves) + " Züge gebraucht."
-			inputField.enabled = false
-			inputButton.enabled = false
+			inputField.isEnabled = false
+			inputButton.isEnabled = false
 		}
 		
 		messageLabel.text = message
