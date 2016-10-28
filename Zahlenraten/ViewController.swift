@@ -60,7 +60,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 	
 	@IBAction func infoPressed() {
-		let alertController = UIAlertController(title: "Zahlenraten", message: "(c) Frank & Emma Meies", preferredStyle: UIAlertControllerStyle.alert)
+		let alertController = UIAlertController(title: "Zahlenraten " + ViewController.getVersion(), message: "(c) Frank & Emma Meies", preferredStyle: UIAlertControllerStyle.alert)
 		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
 		self.present(alertController, animated: true, completion: nil)
 	}
@@ -143,6 +143,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		messageLabel.text = message
 		movesLabel.text = moves
 
+	}
+	
+	class func getVersion() -> String {
+		if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+			return version
+		}
+		return ""
 	}
 }
 
