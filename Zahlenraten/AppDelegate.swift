@@ -13,9 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+		prepareDefaultSettings()
+		prepareTracking()
         return true
     }
 
@@ -27,10 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+		endTracking()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+		prepareTracking()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -39,8 +42,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+		endTracking()
     }
-
-
+	
+	fileprivate func prepareDefaultSettings() {
+		let userDefaults = UserDefaults.standard
+		let defaults = [ "TrackingPreference" : true ]
+		userDefaults.register(defaults: defaults)
+		userDefaults.synchronize()
+	}
+	
+	private func prepareTracking(){
+		let userDefaults = UserDefaults.standard
+		let trackingAllowed = userDefaults.bool(forKey: "TrackingPreference")
+		if trackingAllowed {
+			let tracker = ETRTracker.shared()
+			if tracker?.userConsent != ETRUserConsent.granted {
+				tracker?.userConsent = ETRUserConsent.granted
+			}
+			tracker?.start(withAccountKey: "+tXDFqNkzUSZT+WbulAWtoscp7b68Z4LxFWfW351rgg=", sharedSecret: "d41d8cd98f", timeInterval: 60)
+			tracker?.trackScreenView("Main View")
+			tracker?.sendPendingEventsNow()
+		}
+	}
+	
+	private func endTracking(){
+		ETRTracker.shared().stop()
+	}
 }
 

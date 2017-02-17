@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */; };
 		01CBDC711A7507A100CAF472 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
 		01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CBDC741A7519B700CAF472 /* Images.xcassets */; };
+		F42139801E57133400CB3612 /* libETRTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F421397F1E57133400CB3612 /* libETRTracker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,9 @@
 		01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZahlenratenTests.swift; sourceTree = "<group>"; usesTabs = 0; };
 		01CBDC701A7507A100CAF472 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		01CBDC741A7519B700CAF472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Zahlenraten-Bridging-Header.h"; sourceTree = "<group>"; };
+		F421397C1E56EE7300CB3612 /* ETRTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTracker.h; sourceTree = "<group>"; };
+		F421397F1E57133400CB3612 /* libETRTracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libETRTracker.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42139801E57133400CB3612 /* libETRTracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 				01C90D021A73E5F600E84282 /* LaunchScreen.xib */,
 				0190AA851BA580C9004B6ADD /* Ressources */,
 				01C90CF71A73E5F600E84282 /* Supporting Files */,
+				F421397B1E56E96600CB3612 /* Tracking */,
 			);
 			path = Zahlenraten;
 			sourceTree = "<group>";
@@ -123,6 +129,16 @@
 				01C90D0E1A73E5F600E84282 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F421397B1E56E96600CB3612 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				F421397F1E57133400CB3612 /* libETRTracker.a */,
+				F421397C1E56EE7300CB3612 /* ETRTracker.h */,
+				F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */,
+			);
+			name = Tracking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +206,7 @@
 				};
 			};
 			buildConfigurationList = 01C90CEF1A73E5F500E84282 /* Build configuration list for PBXProject "Zahlenraten" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -374,13 +390,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z7LFD4A277;
 				INFOPLIST_FILE = Zahlenraten/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Zahlenraten",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riesenkalmar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zahlenraten/Zahlenraten-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -393,13 +413,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z7LFD4A277;
 				INFOPLIST_FILE = Zahlenraten/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Zahlenraten",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riesenkalmar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zahlenraten/Zahlenraten-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
