@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0140C96B1A753E4400489A60 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
+		018762531E59BFDD003E8619 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 018762521E59BFDD003E8619 /* Settings.bundle */; };
 		01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CF91A73E5F600E84282 /* AppDelegate.swift */; };
 		01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CFB1A73E5F600E84282 /* ViewController.swift */; };
 		01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C90CFD1A73E5F600E84282 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		018762521E59BFDD003E8619 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		01C90CF41A73E5F600E84282 /* Zahlenraten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zahlenraten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90CF81A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C90CF91A73E5F600E84282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				01CBDC701A7507A100CAF472 /* Game.swift */,
 				01C90CFD1A73E5F600E84282 /* Main.storyboard */,
 				01C90D021A73E5F600E84282 /* LaunchScreen.xib */,
+				018762521E59BFDD003E8619 /* Settings.bundle */,
 				0190AA851BA580C9004B6ADD /* Ressources */,
 				01C90CF71A73E5F600E84282 /* Supporting Files */,
 				F421397B1E56E96600CB3612 /* Tracking */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018762531E59BFDD003E8619 /* Settings.bundle in Resources */,
 				01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */,
 				01C90CFF1A73E5F600E84282 /* Main.storyboard in Resources */,
 				01C90D041A73E5F600E84282 /* LaunchScreen.xib in Resources */,

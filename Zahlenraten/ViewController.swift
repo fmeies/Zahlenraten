@@ -46,10 +46,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
 	
-	@IBAction func newGamePressed() {
-		newGame()
-  	}
-    
 	@IBAction func buttonPressed() {
         if(inputField.isHidden){
 			startGame()
@@ -58,6 +54,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             nextGuess()
         }
     }
+	
+    @IBAction func newGamePressed() {
+        newGame()
+    }
+    
+	@IBAction func handleSettingsButtonPressed(_ sender: AnyObject) {
+		UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+	}
 	
 	@IBAction func infoPressed() {
 		let alertController = UIAlertController(title: "Zahlenraten " + ViewController.getVersion(), message: "(c) Frank & Emma Meies", preferredStyle: UIAlertControllerStyle.alert)

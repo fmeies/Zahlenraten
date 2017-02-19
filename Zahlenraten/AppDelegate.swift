@@ -56,13 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let userDefaults = UserDefaults.standard
 		let trackingAllowed = userDefaults.bool(forKey: "TrackingPreference")
 		if trackingAllowed {
-			let tracker = ETRTracker.shared()
-			if tracker?.userConsent != ETRUserConsent.granted {
-				tracker?.userConsent = ETRUserConsent.granted
-			}
-			tracker?.start(withAccountKey: "+tXDFqNkzUSZT+WbulAWtoscp7b68Z4LxFWfW351rgg=", sharedSecret: "d41d8cd98f", timeInterval: 60)
-			tracker?.trackScreenView("Main View")
-			tracker?.sendPendingEventsNow()
+			let tracker = ETRTracker.shared()!
+			// actually we would have to ask the user:
+			tracker.userConsent = ETRUserConsent.granted
+			tracker.start(withAccountKey: "+tXDFqNkzUSZT+WbulAWtoscp7b68Z4LxFWfW351rgg=", sharedSecret: "d41d8cd98f", timeInterval: 60)
+			tracker.trackScreenView("Zahlenraten Main View")
+			tracker.sendPendingEventsNow()
 		}
 	}
 	
