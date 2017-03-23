@@ -47,7 +47,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 	
 	@IBAction func buttonPressed() {
-        if(inputField.isHidden){
+        if inputField.isHidden {
 			startGame()
 			inputField.becomeFirstResponder()
         } else {
@@ -58,17 +58,30 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func newGamePressed() {
         newGame()
     }
-    
+	
 	@IBAction func handleSettingsButtonPressed(_ sender: AnyObject) {
-		UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+		if #available(iOS 10.0, *) {
+			UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+		} else {
+			// Fallback on earlier versions
+		}
 	}
 	
 	@IBAction func infoPressed() {
-		let alertController = UIAlertController(title: "Zahlenraten " + ViewController.getVersion(), message: "(c) Frank & Emma Meies", preferredStyle: UIAlertControllerStyle.alert)
-		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-		self.present(alertController, animated: true, completion: nil)
+		let mytitle = "Zahlenraten " + ViewController.getVersion()
+		let mymessage = "(c) Frank & Emma Meies"
+		
+		if #available(iOS 8.0, *) {
+			let alertController = UIAlertController(title: mytitle, message: mymessage, preferredStyle: UIAlertControllerStyle.alert)
+			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+			self.present(alertController, animated: true, completion: nil)
+		} else {
+			// Fallback on earlier versions
+			let alert = UIAlertView(title: mytitle, message: mymessage, delegate:nil, cancelButtonTitle:"Ok")
+			alert.show()
+		}
 	}
-	
+    
     func nextGuess(){
 		var inputInt : UInt = 0
 		if let input = Int(inputField.text!) {
@@ -103,7 +116,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 			return
 		}
 		
-		if(upperInt < lowerInt) {
+		if upperInt < lowerInt {
 			lowerBoundaryField.text = "1"
 			upperBoundaryField.text = "100"
 			messageLabel.text = "Grenzen falsch angegeben!"
@@ -130,14 +143,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		var message = "Bitte die Grenzen beachten!"
 
 		let status : UInt = game.status;
-		if(status == 0){
+		if status == 0 {
 			message = "Gib eine Zahl ein!"
-		}
-		if(status == 1){
+		} else if status == 1 {
 			message = "Die Zahl ist zu klein!"
-		} else if (status == 2){
+		} else if status == 2 {
 			message = "Die Zahl ist zu gross!"
-		} else if (status == 3){
+		} else if status == 3 {
 			moves = "Juhu, du hast gewonnen!!!"
 			message =  "Du hast " + String(game.moves) + " Züge gebraucht."
 			inputField.isEnabled = false

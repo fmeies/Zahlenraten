@@ -26,16 +26,16 @@ class Game{
     }
     
     func guess(_ value: UInt){
-        if (value < lowerBoundary || value > upperBoundary){
+        if value < lowerBoundary || value > upperBoundary {
             status = 4
             return
         }
         
-        if(value < result){
+        if value < result {
             status = 1
-        } else if(value > result){
+        } else if value > result {
             status = 2
-        } else if (value == result){
+        } else if value == result {
             status = 3
         }
         moves += 1

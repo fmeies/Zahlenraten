@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
+	func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 		endTracking()
     }
@@ -52,20 +52,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		userDefaults.synchronize()
 	}
 	
-	private func prepareTracking(){
+	fileprivate func prepareTracking(){
 		let userDefaults = UserDefaults.standard
 		let trackingAllowed = userDefaults.bool(forKey: "TrackingPreference")
 		if trackingAllowed {
 			let tracker = ETRTracker.shared()!
-			// actually we would have to ask the user:
-			tracker.userConsent = ETRUserConsent.granted
+			if tracker.userConsent != ETRUserConsent.granted {
+				// actually we would have to ask the user:
+				//tracker.userConsent = ETRUserConsent.granted
+			}
 			tracker.start(withAccountKey: "+tXDFqNkzUSZT+WbulAWtoscp7b68Z4LxFWfW351rgg=", sharedSecret: "d41d8cd98f", timeInterval: 60)
 			tracker.trackScreenView("Zahlenraten Main View")
 			tracker.sendPendingEventsNow()
 		}
 	}
 	
-	private func endTracking(){
+	fileprivate func endTracking(){
 		ETRTracker.shared().stop()
 	}
 }
