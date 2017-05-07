@@ -62,6 +62,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	@IBAction func handleSettingsButtonPressed(_ sender: AnyObject) {
 		if #available(iOS 10.0, *) {
 			UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+		} else if #available(iOS 8.0, *){
+			UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString) as! URL)
 		} else {
 			// Fallback on earlier versions
 		}
