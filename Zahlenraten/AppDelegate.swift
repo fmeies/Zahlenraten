@@ -59,9 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let tracker = ETRTracker.shared()!
 			if tracker.userConsent != ETRUserConsent.granted {
 				// actually we would have to ask the user:
-				//tracker.userConsent = ETRUserConsent.granted
+				tracker.userConsent = ETRUserConsent.granted
 			}
-			tracker.start(withAccountKey: "+tXDFqNkzUSZT+WbulAWtoscp7b68Z4LxFWfW351rgg=", sharedSecret: "d41d8cd98f", timeInterval: 60)
+			tracker.start(withAccountKey: "wsxT8K", sharedSecret: "d41d8cd98f", timeInterval: 60)
 			tracker.trackScreenView("Zahlenraten Main View")
 			tracker.sendPendingEventsNow()
 		}

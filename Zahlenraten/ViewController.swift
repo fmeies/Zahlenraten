@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		view.addGestureRecognizer(recognizer)
 	}
 
-	func handleTap(_ recognizer: UITapGestureRecognizer) {
+	@objc func handleTap(_ recognizer: UITapGestureRecognizer) {
 		// remove keyboard
 		inputField.resignFirstResponder()
 		lowerBoundaryField.resignFirstResponder()
@@ -62,10 +62,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	@IBAction func handleSettingsButtonPressed(_ sender: AnyObject) {
 		if #available(iOS 10.0, *) {
 			UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-		} else if #available(iOS 8.0, *){
-			UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString) as! URL)
 		} else {
-			// Fallback on earlier versions
+			UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
 		}
 	}
 	
@@ -73,15 +71,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		let mytitle = "Zahlenraten " + ViewController.getVersion()
 		let mymessage = "(c) Frank & Emma Meies"
 		
-		if #available(iOS 8.0, *) {
-			let alertController = UIAlertController(title: mytitle, message: mymessage, preferredStyle: UIAlertControllerStyle.alert)
-			alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-			self.present(alertController, animated: true, completion: nil)
-		} else {
-			// Fallback on earlier versions
-			let alert = UIAlertView(title: mytitle, message: mymessage, delegate:nil, cancelButtonTitle:"Ok")
-			alert.show()
-		}
+		let alertController = UIAlertController(title: mytitle, message: mymessage, preferredStyle: UIAlertControllerStyle.alert)
+		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+		self.present(alertController, animated: true, completion: nil)
 	}
     
     func nextGuess(){
