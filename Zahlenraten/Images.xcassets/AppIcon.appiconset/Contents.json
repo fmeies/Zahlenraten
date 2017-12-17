@@ -101,6 +101,12 @@
       "idiom" : "ipad",
       "filename" : "zahlen_167.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Zahlenraten_1024x1024.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

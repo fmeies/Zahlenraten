@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 /**
  * States for the \c -userConsent property.
@@ -45,7 +44,6 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * Number of seconds between server updates (defaults to once per minute).
  */
 #define ETRDefaultTimeInterval 60
-
 
 /**
  * This class provides the API to etracker's tracking service.
@@ -119,13 +117,14 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
 @property (copy) Location *currentLocation;
 
 /**
- * Tracks a custom event. The \c category and the \c action must be non-empty
- * strings. All other arguments are optional and may be replaced with nil.
- * The operation is a no-op if the \c category or the \c action are invalid or
- * tracking has been temporarily or permanently disabled.
+ * Tracks a custom event. The \c object,  \c category and the \c action must be
+ * non-empty strings. The value is optional and may be replaced with nil, but if
+ * set it must be an integer. The operation is a no-op if the \object, \c
+ * category or the \c action are invalid or tracking has been temporarily or
+ * permanently disabled.
  */
-- (void)trackEventWithCategory:(NSString *)category action:(NSString *)action
-                         label:(NSString *)label value:(NSString *)value;
+- (void)trackUserDefined:(NSString *)category action:(NSString *)action
+                         object:(NSString *)object value:(NSString *)value;
 
 /**
  * Tracks a "screen view" event. The \c screenName must be a non-empty string.
@@ -139,18 +138,15 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
 - (void)trackScreenView:(NSString *)screenName;
 
 /**
- * Tracks the explicit begin of a new session.
- * The operation is a no-op if tracking has been temporarily or permanently disabled.
- * @see -trackSessionStop
+ * Tracks the view starts durations counter
  */
-- (void)trackSessionStart;
+- (void)trackViewLoaded:(NSString *)viewName;
+
 
 /**
- * Tracks the explicit end of the current session.
- * The operation is a no-op if tracking has been temporarily or permanently disabled.
- * @see -trackSessionStart
+ * Tracks the view stops duration counter
  */
-- (void)trackSessionStop;
+- (void)trackViewUnloaded:(NSString *)viewName;
 
 /**
  * Tracks an order as defined by the given \c order object, which must be non-nil.
@@ -161,32 +157,6 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
 - (void)trackOrder:(NSDictionary *)order;
 
 /**
- * Tracks the calling of the given URL that will open in a browser.
- * The operation is a no-op if the \c order is nil or contains values which cannot
- * be converted into a JSON document or if tracking has been temporarily or
- * permanently disabled.
- */
-- (void)trackLinkCalledWithName:(NSString *)name URL:(NSString *)URL referrer:(NSString *)referrer;
-
-/**
- * Tracks the click on a push message with the given name.
- * The operation is a no-op if the \c order is nil or contains values which cannot
- * be converted into a JSON document or if tracking has been temporarily or
- * permanently disabled.
- */
-- (void)trackPushMessageClickedWithName:(NSString *)name;
-
-/**
- * Tracks an application lifecycle event like starting, pausing, resuming, or
- * terminating the application or starting or stopping an activity, that is 
- * displaying a UIViewController. These events are automatically tracked
- * if \c applicationLifecycleEventsEnabled is set to YES.
- * The \c name parameter is optional and only used for
- * \c ETRApplicationLifecycleStartActivity and \c ETRApplicationLifecycleStopActivity.
- */
-- (void)trackApplicationLifecycle:(ETRApplicationLifecycle)applicationLifecycle name:(NSString *)name;
-
-/**
  * Sets or returns whether the automatic location tracking is enabled or not. Defaults to NO.
  * It uses the significant-change location service, that provides accuracy that’s
  * good enough and represents a power-saving alternative to the standard location service. If the user has disabled the
@@ -195,25 +165,5 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * Make sure to link with CoreLocation.framework in order to use this.
  */
 @property (nonatomic, assign) BOOL automaticLocationTrackingEnabled;
-
-/**
- * Sets or returns whether to automatically track lifecycle events. Defaults to NO.
- */
-@property (nonatomic, assign) BOOL applicationLifecycleEventsEnabled;
-
-@end
-
-/**
- * We swizzle \c viewDidAppear: and \c viewWillDisappear: to enable automatic lifecycle tracking.
- * of \c ETRApplicationLifecycleStartActivity and \c ETRApplicationLifecycleStopActivity events.
- */
-@interface UIViewController (ETR)
-
-/**
- * Returns the screen name used for automatic activity tracking.
- * Subclasses may overwrite either this method to return a non-empty string.
- * By default the controller's class name is returned.
- */
-- (NSString *)etr_screenName;
 
 @end

@@ -23,12 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+		ETRTracker.shared().trackViewUnloaded("Zahlenraten")
+		ETRTracker.shared().sendPendingEventsNow()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-		endTracking()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -61,9 +62,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				// actually we would have to ask the user:
 				tracker.userConsent = ETRUserConsent.granted
 			}
-			tracker.start(withAccountKey: "wsxT8K", sharedSecret: "d41d8cd98f", timeInterval: 60)
+			
+//			setenv("ETRSERVERURL","http://tracking.etbox.qa.hhoffice.de.etracker.com",1);
+//			tracker.start(withAccountKey: "2SVUSV", sharedSecret: "8be6226678", timeInterval: 10)
+			tracker.start(withAccountKey: "wsxT8K", sharedSecret: "d41d8cd98f", timeInterval: 10)
+			tracker.debug = true
+			
+			tracker.trackViewLoaded("Zahlenraten")
 			tracker.trackScreenView("Zahlenraten Main View")
 			tracker.sendPendingEventsNow()
+
 		}
 	}
 	
