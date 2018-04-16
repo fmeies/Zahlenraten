@@ -64,8 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			}
 			
 //			setenv("ETRSERVERURL","http://tracking.etbox.qa.hhoffice.de.etracker.com",1);
-//			tracker.start(withAccountKey: "2SVUSV", sharedSecret: "8be6226678", timeInterval: 10)
-			tracker.start(withAccountKey: "wsxT8K", sharedSecret: "d41d8cd98f", timeInterval: 10)
+//			tracker.start(withAccountKey: "2SVUSV", sharedSecret: "", timeInterval: 10)
+			tracker.start(withAccountKey: "wsxT8K", sharedSecret: "", timeInterval: 10)
 			tracker.debug = true
 			
 			tracker.trackViewLoaded("Zahlenraten")
