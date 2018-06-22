@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
-    @IBOutlet weak var introLabel: UILabel!
-    @IBOutlet weak var inputField: UITextField!
-    @IBOutlet weak var lowerBoundaryField: UITextField!
-    @IBOutlet weak var upperBoundaryField: UITextField!
-    @IBOutlet weak var inputButton: UIButton!
+	@IBOutlet weak var introLabel: UILabel!
+	@IBOutlet weak var inputField: UITextField!
+	@IBOutlet weak var lowerBoundaryField: UITextField!
+	@IBOutlet weak var upperBoundaryField: UITextField!
+	@IBOutlet weak var inputButton: UIButton!
 	@IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var movesLabel: UILabel!
+	@IBOutlet weak var movesLabel: UILabel!
 
 	var game:Game
 	
@@ -26,8 +26,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	}
 	
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+		super.viewDidLoad()
+		// Do any additional setup after loading the view, typically from a nib.
 		
 		let recognizer = UITapGestureRecognizer(target: self, action:#selector(ViewController.handleTap(_:)))
 		recognizer.delegate = self
@@ -41,23 +41,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		upperBoundaryField.resignFirstResponder()
 	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
 	
 	@IBAction func buttonPressed() {
-        if inputField.isHidden {
+		if inputField.isHidden {
 			startGame()
 			inputField.becomeFirstResponder()
-        } else {
-            nextGuess()
-        }
-    }
+		} else {
+			nextGuess()
+		}
+	}
 	
-    @IBAction func newGamePressed() {
-        newGame()
-    }
+	@IBAction func newGamePressed() {
+		newGame()
+	}
 	
 	@IBAction func handleSettingsButtonPressed(_ sender: AnyObject) {
 		if #available(iOS 10.0, *) {
@@ -75,24 +75,24 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
 		self.present(alertController, animated: true, completion: nil)
 	}
-    
-    func nextGuess(){
+
+	func nextGuess(){
 		var inputInt : UInt = 0
 		if let input = Int(inputField.text!) {
 			inputInt = UInt(input)
 		}
 		
-        game.guess(inputInt)
-        updateStatus()
-    }
-    
-    func newGame(){
+		game.guess(inputInt)
+		updateStatus()
+	}
+
+	func newGame(){
 		switchMode(false)
 		movesLabel.text = "Wähle die Grenzen: "
 		messageLabel.text = "Warten auf Eingabe!"
-    }
+	}
 	
-    func startGame(){
+	func startGame(){
 		var lowerInt : UInt = 0
 		var upperInt : UInt = 0
 		
