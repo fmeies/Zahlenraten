@@ -69,9 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			tracker.debug = true
 			
 			tracker.trackViewLoaded("Zahlenraten")
-			tracker.trackScreenView("Zahlenraten Main View")
+			tracker.trackScreenView("Zahlenraten Main View", areas: "Zahlenraten Main Area")
 			tracker.sendPendingEventsNow()
-
 		}
 	}
 	

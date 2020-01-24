@@ -16,7 +16,7 @@
 		01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */; };
 		01CBDC711A7507A100CAF472 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
 		01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CBDC741A7519B700CAF472 /* Images.xcassets */; };
-		F42139801E57133400CB3612 /* libETRTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F421397F1E57133400CB3612 /* libETRTracker.a */; };
+		F4C0B6AB233A360A0023FC12 /* libETRTracker-64360.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,8 @@
 		01CBDC741A7519B700CAF472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Zahlenraten-Bridging-Header.h"; sourceTree = "<group>"; };
 		F421397C1E56EE7300CB3612 /* ETRTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTracker.h; sourceTree = "<group>"; };
-		F421397F1E57133400CB3612 /* libETRTracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libETRTracker.a; sourceTree = "<group>"; };
+		F421397F1E57133400CB3612 /* libETRTracker-61537.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-61537.a"; sourceTree = "<group>"; };
+		F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-64360.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42139801E57133400CB3612 /* libETRTracker.a in Frameworks */,
+				F4C0B6AB233A360A0023FC12 /* libETRTracker-64360.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +138,8 @@
 		F421397B1E56E96600CB3612 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				F421397F1E57133400CB3612 /* libETRTracker.a */,
+				F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */,
+				F421397F1E57133400CB3612 /* libETRTracker-61537.a */,
 				F421397C1E56EE7300CB3612 /* ETRTracker.h */,
 				F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */,
 			);
@@ -213,6 +215,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

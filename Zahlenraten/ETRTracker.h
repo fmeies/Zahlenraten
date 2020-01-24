@@ -2,7 +2,7 @@
 //  ETRTracker.h
 //  etracker-tracking-framework-ios
 //
-//  Copyright 2011, 2014 etracker GmbH. All rights reserved.
+//  Copyright 2011, 2019 etracker GmbH. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -127,6 +127,18 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
                          object:(NSString *)object value:(NSString *)value;
 
 /**
+ * Tracks a custom event. The \c object,  \c category and the \c action must be
+ * non-empty strings. The value is optional and may be replaced with nil, but if
+ * set it must be an integer. The screenName and areas parameter is optional and
+ * may be replaced with nil. The operation is a no-op if the \object, \c
+ * category or the \c action are invalid or tracking has been temporarily or
+ * permanently disabled.
+ */
+- (void)trackUserDefined:(NSString *)category action:(NSString *)action
+                  object:(NSString *)object value:(NSString *)value
+                  screenName:(NSString *)screenName areas:(NSString *)areas;
+
+/**
  * Tracks a "screen view" event. The \c screenName must be a non-empty string.
  * The operation is a no-op if the \c screenName is invalid or tracking has
  * been temporarily or permanently disabled.
@@ -136,6 +148,18 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * to the controllers's class name.
  */
 - (void)trackScreenView:(NSString *)screenName;
+
+/**
+ * Tracks a "screen view" event. The \c screenName must be a non-empty string.
+ * The \c areas parameter is optional and may be replaced with nil.
+ * The operation is a no-op if the \c screenName is invalid or tracking has
+ * been temporarily or permanently disabled.
+ *
+ * The \c ETRTrackingViewController will automatically generate this event
+ * on \c -viewDidAppear: and uses the \c screenName property which defaults
+ * to the controllers's class name.
+ */
+- (void)trackScreenView:(NSString *)screenName areas:(NSString *)areas;
 
 /**
  * Tracks the view starts durations counter
