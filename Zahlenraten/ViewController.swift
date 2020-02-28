@@ -61,9 +61,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	
 	@IBAction func handleSettingsButtonPressed(_ sender: AnyObject) {
 		if #available(iOS 10.0, *) {
-			UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+			UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
 		} else {
-			UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+			UIApplication.shared.openURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
 		}
 	}
 	
@@ -71,8 +71,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		let mytitle = "Zahlenraten " + ViewController.getVersion()
 		let mymessage = "(c) Frank & Emma Meies"
 		
-		let alertController = UIAlertController(title: mytitle, message: mymessage, preferredStyle: UIAlertControllerStyle.alert)
-		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+		let alertController = UIAlertController(title: mytitle, message: mymessage, preferredStyle: UIAlertController.Style.alert)
+		alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
 		self.present(alertController, animated: true, completion: nil)
 	}
 
