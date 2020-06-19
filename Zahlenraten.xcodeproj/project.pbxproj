@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0140C96B1A753E4400489A60 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
+		01837A54249CD17B005C2DAC /* libETRTracker-65196.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F48FA249B9339000E033B /* libETRTracker-65196.a */; };
 		018762531E59BFDD003E8619 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 018762521E59BFDD003E8619 /* Settings.bundle */; };
 		01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CF91A73E5F600E84282 /* AppDelegate.swift */; };
 		01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CFB1A73E5F600E84282 /* ViewController.swift */; };
@@ -16,7 +17,6 @@
 		01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */; };
 		01CBDC711A7507A100CAF472 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
 		01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CBDC741A7519B700CAF472 /* Images.xcassets */; };
-		F4C0B6AB233A360A0023FC12 /* libETRTracker-64360.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		016F48FA249B9339000E033B /* libETRTracker-65196.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65196.a"; sourceTree = "<group>"; };
+		016F4900249B9500000E033B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		018762521E59BFDD003E8619 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		01C90CF41A73E5F600E84282 /* Zahlenraten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zahlenraten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90CF81A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4C0B6AB233A360A0023FC12 /* libETRTracker-64360.a in Frameworks */,
+				01837A54249CD17B005C2DAC /* libETRTracker-65196.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		016F48FF249B9500000E033B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				016F4900249B9500000E033B /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0190AA851BA580C9004B6ADD /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 				01C90CF61A73E5F600E84282 /* Zahlenraten */,
 				01C90D0C1A73E5F600E84282 /* ZahlenratenTests */,
 				01C90CF51A73E5F600E84282 /* Products */,
+				016F48FF249B9500000E033B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -138,8 +149,9 @@
 		F421397B1E56E96600CB3612 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */,
 				F421397F1E57133400CB3612 /* libETRTracker-61537.a */,
+				F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */,
+				016F48FA249B9339000E033B /* libETRTracker-65196.a */,
 				F421397C1E56EE7300CB3612 /* ETRTracker.h */,
 				F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */,
 			);
@@ -409,6 +421,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7LFD4A277;
 				INFOPLIST_FILE = Zahlenraten/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,6 +445,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7LFD4A277;
 				INFOPLIST_FILE = Zahlenraten/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
