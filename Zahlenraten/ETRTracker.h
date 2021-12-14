@@ -2,7 +2,7 @@
 //  ETRTracker.h
 //  etracker-tracking-framework-ios
 //
-//  Copyright 2011, 2019 etracker GmbH. All rights reserved.
+//  Copyright etracker GmbH. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,9 +11,10 @@
  * States for the \c -userConsent property.
  */
 typedef NS_ENUM(NSInteger, ETRUserConsent) {
-    ETRUserConsentUnknown,  ///< user hasn't decided yet
-    ETRUserConsentDenied,   ///< user has denied tracking
-    ETRUserConsentGranted   ///< user has agreed
+    ETRUserConsentUnknown,      ///< user hasn't decided yet
+    ETRUserConsentDenied,       ///< user has denied tracking
+    ETRUserConsentGranted,      ///< user has agreed
+    ETRUserConsentNotRequired   ///< consent free tracking
 };
 
 
@@ -30,25 +31,16 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
 };
 
 /**
- * Simple Location class
+ * Number of seconds between server updates (defaults to 10 seconds).
  */
-@interface Location : NSObject
+#define ETRDefaultTimeInterval 10
 
-@property (nonatomic, assign) double latitude;
-@property (nonatomic, assign) double longitude;
-
-- (id)initWithLatitude:(double)latitude longitude:(double)longitude;
-@end
-
-/**
- * Number of seconds between server updates (defaults to once per minute).
- */
-#define ETRDefaultTimeInterval 60
+@class ETROrder;
 
 /**
  * This class provides the API to etracker's tracking service.
  *
- * You MUST call -startTrackerWithAccountKey:sharedSecret:timeInterval: in you application delegate
+ * You MUST call -startTrackerWithAccountKey:timeInterval: in you application delegate
  * to setup the tracking service. You should call -stopTracker if your application gets terminated 
  * to tear down the service.
  * 
@@ -72,7 +64,6 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * The third parameter is the time in seconds the service will wait before sending all pending events.
  */
 - (void)startTrackerWithAccountKey:(NSString *)accountKey
-                      sharedSecret:(NSString *)sharedSecret
                       timeInterval:(NSTimeInterval)timeInterval;
 
 /**
@@ -91,7 +82,28 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * tracking is automatically disabled. The property value is persistently stored in the standard
  * user defaults under the key "com.etracker.userConsent".
  */
+@property (assign) ETRUserConsent userConsentTracking;
+
+/**
+ * Sets or returns whether user consent to tracking has been given. Without user consent,
+ * tracking is automatically disabled. The property value is persistently stored in the standard
+ * user defaults under the key "com.etracker.userConsent". Deprecated, use
+ * userConsentTracking instead.
+ */
 @property (assign) ETRUserConsent userConsent;
+
+/**
+ * Sets or returns whether user consent to notifications has been given. Without user consent,
+ * notifications are not allowed. The property value is persistently stored in the standard
+ * user defaults under the key "com.etracker.userConsentNotifications".
+ */
+@property (assign) ETRUserConsent userConsentNotifications;
+
+/**
+ * Sets or returns the currently stored notification token. The property value is persistently
+ * stored in the standard user defaults under the key "com.etracker.notificationToken".
+ */
+@property (copy) NSString *notificationToken;
 
 /**
  * Sets or returns whether tracking is enabled or not. Defaults to YES.
@@ -109,34 +121,6 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * By default, this is "~/Library/Caches/com.etracker".
  */
 @property (copy) NSString *pendingEventsFolderPath;
-
-/**
- * The location that is used for geo location tracking.
- * Update the location that is used for tracking manually if you don't want to use the automatic location tracking
- */
-@property (copy) Location *currentLocation;
-
-/**
- * Tracks a custom event. The \c object,  \c category and the \c action must be
- * non-empty strings. The value is optional and may be replaced with nil, but if
- * set it must be an integer. The operation is a no-op if the \object, \c
- * category or the \c action are invalid or tracking has been temporarily or
- * permanently disabled.
- */
-- (void)trackUserDefined:(NSString *)category action:(NSString *)action
-                         object:(NSString *)object value:(NSString *)value;
-
-/**
- * Tracks a custom event. The \c object,  \c category and the \c action must be
- * non-empty strings. The value is optional and may be replaced with nil, but if
- * set it must be an integer. The screenName and areas parameter is optional and
- * may be replaced with nil. The operation is a no-op if the \object, \c
- * category or the \c action are invalid or tracking has been temporarily or
- * permanently disabled.
- */
-- (void)trackUserDefined:(NSString *)category action:(NSString *)action
-                  object:(NSString *)object value:(NSString *)value
-                  screenName:(NSString *)screenName areas:(NSString *)areas;
 
 /**
  * Tracks a "screen view" event. The \c screenName must be a non-empty string.
@@ -162,15 +146,32 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
 - (void)trackScreenView:(NSString *)screenName areas:(NSString *)areas;
 
 /**
- * Tracks the view starts durations counter
+ * Tracks the end of the screen view.
+ * This is important for the calculation of the length of stay per screen view, especially for the last screen view.
  */
-- (void)trackViewLoaded:(NSString *)viewName;
-
+- (void)trackScreenViewEnd;
 
 /**
- * Tracks the view stops duration counter
+ * Tracks a custom event. The \c object,  \c category and the \c action must be
+ * non-empty strings. The value is optional and may be replaced with nil, but if
+ * set it must be an integer. The operation is a no-op if the \object, \c
+ * category or the \c action are invalid or tracking has been temporarily or
+ * permanently disabled.
  */
-- (void)trackViewUnloaded:(NSString *)viewName;
+- (void)trackUserDefined:(NSString *)category action:(NSString *)action
+                         object:(NSString *)object value:(NSString *)value;
+
+/**
+ * Tracks a custom event. The \c object,  \c category and the \c action must be
+ * non-empty strings. The value is optional and may be replaced with nil, but if
+ * set it must be an integer. The screenName and areas parameter is optional and
+ * may be replaced with nil. The operation is a no-op if the \object, \c
+ * category or the \c action are invalid or tracking has been temporarily or
+ * permanently disabled.
+ */
+- (void)trackUserDefined:(NSString *)category action:(NSString *)action
+                  object:(NSString *)object value:(NSString *)value
+                  screenName:(NSString *)screenName areas:(NSString *)areas;
 
 /**
  * Tracks an order as defined by the given \c order object, which must be non-nil.
@@ -178,16 +179,49 @@ typedef NS_ENUM(NSInteger, ETRApplicationLifecycle) {
  * be converted into a JSON document or if tracking has been temporarily or
  * permanently disabled.
  */
-- (void)trackOrder:(NSDictionary *)order;
+- (void)trackOrder:(ETROrder *)order;
 
 /**
- * Sets or returns whether the automatic location tracking is enabled or not. Defaults to NO.
- * It uses the significant-change location service, that provides accuracy that’s
- * good enough and represents a power-saving alternative to the standard location service. If the user has disabled the
- * location service for this app, enabling this will ask the user again for re-enabling it.
- * If you want to prevent that, test for the location service status before calling this method.
- * Make sure to link with CoreLocation.framework in order to use this.
+ * Tracks a notification opt-in opens event.
  */
-@property (nonatomic, assign) BOOL automaticLocationTrackingEnabled;
+- (void)trackNotificationOptInOpens;
+
+/**
+ * Tracks a notification opt-in allow event.
+ */
+- (void)trackNotificationOptInAllow;
+
+/**
+ * Tracks a notification opt-in deny event.
+ */
+- (void)trackNotificationOptInDeny;
+
+/**
+ * Sends the list of notification topics, the user is interested in, to the server. \c topics is a comma separated list of topics.
+ * The \c topics must be a non-empty string.
+ */
+- (void)trackNotificationTopics:(NSString *)topics;
+
+/**
+ * Tracks a shown notification event. The \c messageId is the id passed over in the notification.
+ * The \c title must be a non-empty string.
+ */
+- (void)trackNotificationShown:(NSString *)messageId title:(NSString *)title;
+
+/**
+ * Tracks a clicked notification event. The \c messageId is the id passed over in the notification.
+ * The \c title must be a non-empty string.
+ */
+- (void)trackNotificationClicked:(NSString *)messageId title:(NSString *)title;
+
+/**
+ * Sends a notification token to the server. If \c token is nil, the current token is sent.
+ */
+- (void)sendNotificationToken:(NSString *)token;
+
+/**
+ * Revokes the current notification token.
+ */
+- (void)revokeNotificationToken;
 
 @end

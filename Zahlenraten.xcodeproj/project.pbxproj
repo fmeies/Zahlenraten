@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0140C96B1A753E4400489A60 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
-		01837A54249CD17B005C2DAC /* libETRTracker-65196.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F48FA249B9339000E033B /* libETRTracker-65196.a */; };
 		018762531E59BFDD003E8619 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 018762521E59BFDD003E8619 /* Settings.bundle */; };
 		01C90CFA1A73E5F600E84282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CF91A73E5F600E84282 /* AppDelegate.swift */; };
 		01C90CFC1A73E5F600E84282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90CFB1A73E5F600E84282 /* ViewController.swift */; };
@@ -17,6 +16,7 @@
 		01C90D101A73E5F600E84282 /* ZahlenratenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C90D0F1A73E5F600E84282 /* ZahlenratenTests.swift */; };
 		01CBDC711A7507A100CAF472 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CBDC701A7507A100CAF472 /* Game.swift */; };
 		01CBDC751A7519B700CAF472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CBDC741A7519B700CAF472 /* Images.xcassets */; };
+		F447022F2679E3BD000B46A7 /* libETRTracker-66010.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F447022E2679E3BD000B46A7 /* libETRTracker-66010.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,7 @@
 		016F48FA249B9339000E033B /* libETRTracker-65196.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65196.a"; sourceTree = "<group>"; };
 		016F4900249B9500000E033B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		018762521E59BFDD003E8619 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		019CFAC82607D1700028796F /* libETRTracker-65734.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65734.a"; sourceTree = "<group>"; };
 		01C90CF41A73E5F600E84282 /* Zahlenraten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zahlenraten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90CF81A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C90CF91A73E5F600E84282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +48,12 @@
 		F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Zahlenraten-Bridging-Header.h"; sourceTree = "<group>"; };
 		F421397C1E56EE7300CB3612 /* ETRTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTracker.h; sourceTree = "<group>"; };
 		F421397F1E57133400CB3612 /* libETRTracker-61537.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-61537.a"; sourceTree = "<group>"; };
+		F447022E2679E3BD000B46A7 /* libETRTracker-66010.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-66010.a"; sourceTree = "<group>"; };
+		F47E9F82254B13FE0014B3D1 /* libETRTracker-65453.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65453.a"; sourceTree = "<group>"; };
 		F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-64360.a"; sourceTree = "<group>"; };
+		F4C414B526652FFB00CCA73E /* libETRTracker-65975.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65975.a"; sourceTree = "<group>"; };
+		F4E29B3B2657E23B0047C64E /* libETRTracker-65958.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65958.a"; sourceTree = "<group>"; };
+		F4E29B3C2657E23B0047C64E /* ETROrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETROrder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01837A54249CD17B005C2DAC /* libETRTracker-65196.a in Frameworks */,
+				F447022F2679E3BD000B46A7 /* libETRTracker-66010.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +158,12 @@
 				F421397F1E57133400CB3612 /* libETRTracker-61537.a */,
 				F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */,
 				016F48FA249B9339000E033B /* libETRTracker-65196.a */,
+				F47E9F82254B13FE0014B3D1 /* libETRTracker-65453.a */,
+				019CFAC82607D1700028796F /* libETRTracker-65734.a */,
+				F4E29B3B2657E23B0047C64E /* libETRTracker-65958.a */,
+				F4C414B526652FFB00CCA73E /* libETRTracker-65975.a */,
+				F447022E2679E3BD000B46A7 /* libETRTracker-66010.a */,
+				F4E29B3C2657E23B0047C64E /* ETROrder.h */,
 				F421397C1E56EE7300CB3612 /* ETRTracker.h */,
 				F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */,
 			);
@@ -215,7 +227,6 @@
 					};
 					01C90D081A73E5F600E84282 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = Z7LFD4A277;
 						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 01C90CF31A73E5F500E84282;
@@ -341,8 +352,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -361,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -398,8 +409,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -411,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -423,7 +434,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7LFD4A277;
 				INFOPLIST_FILE = Zahlenraten/Info.plist;
@@ -435,7 +445,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riesenkalmar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zahlenraten/Zahlenraten-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -447,7 +456,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7LFD4A277;
 				INFOPLIST_FILE = Zahlenraten/Info.plist;
@@ -459,7 +467,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riesenkalmar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zahlenraten/Zahlenraten-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -471,7 +478,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = Z7LFD4A277;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ZahlenratenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -487,7 +493,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = Z7LFD4A277;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ZahlenratenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

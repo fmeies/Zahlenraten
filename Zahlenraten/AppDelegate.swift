@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillResignActive(_ application: UIApplication) {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+		ETRTracker.shared().trackScreenViewEnd()
 		ETRTracker.shared().sendPendingEventsNow()
 	}
 
@@ -54,21 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	fileprivate func prepareTracking(){
 		let userDefaults = UserDefaults.standard
-		let trackingAllowed = userDefaults.bool(forKey: "TrackingPreference")
-		if trackingAllowed {
-			let tracker = ETRTracker.shared()!
-			if tracker.userConsent != ETRUserConsent.granted {
-				// actually we would have to ask the user:
-				tracker.userConsent = ETRUserConsent.granted
-			}
-			
-//			setenv("ETRSERVERURL","http://tracking.etbox.qa.hhoffice.de.etracker.com",1);
-//			tracker.start(withAccountKey: "2SVUSV", sharedSecret: "", timeInterval: 10)
-			tracker.start(withAccountKey: "wsxT8K", sharedSecret: "", timeInterval: 10)
-			tracker.debug = true
-			tracker.trackScreenView("Zahlenraten Main View", areas: "Zahlenraten Main Area")
-			tracker.sendPendingEventsNow()
+		let tracker = ETRTracker.shared()!
+		tracker.start(withAccountKey: "wsxT8K", timeInterval: 10)
+		tracker.debug = true
+
+		if tracker.userConsent == ETRUserConsent.unknown {
+			let trackingAllowed = userDefaults.bool(forKey: "TrackingPreference")
+			tracker.userConsent = trackingAllowed ? ETRUserConsent.notRequired : ETRUserConsent.denied
 		}
+			
+		tracker.sendPendingEventsNow()
 	}
 	
 	fileprivate func endTracking(){

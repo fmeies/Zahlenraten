@@ -27,13 +27,28 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	
     override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 		
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(ViewController.defaultsChanged),
+			name: UserDefaults.didChangeNotification,
+			object: nil
+		)
+
 		let recognizer = UITapGestureRecognizer(target: self, action:#selector(ViewController.handleTap(_:)))
 		recognizer.delegate = self
 		view.addGestureRecognizer(recognizer)
+		
+		ETRTracker.shared().trackScreenView("Zahlenraten Main View", areas: "Zahlenraten Main Area")
+
 	}
 
+	@objc func defaultsChanged() {
+		let trackingAllowed = UserDefaults.standard.bool(forKey: "TrackingPreference")
+		let tracker = ETRTracker.shared()!
+		tracker.userConsent = trackingAllowed ? ETRUserConsent.notRequired : ETRUserConsent.denied
+	}
+	
 	@objc func handleTap(_ recognizer: UITapGestureRecognizer) {
 		// remove keyboard
 		inputField.resignFirstResponder()
@@ -162,4 +177,3 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 		return ""
 	}
 }
-
