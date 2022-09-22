@@ -62,15 +62,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 	}
 	
 	@IBAction func buttonPressed() {
+		let tracker = ETRTracker.shared()!
 		if inputField.isHidden {
+			tracker.trackUserDefined("Button", action: "click", object: "Start game", value: nil)
 			startGame()
 			inputField.becomeFirstResponder()
 		} else {
+			tracker.trackUserDefined("Button", action: "click", object: "Send guess", value: nil)
 			nextGuess()
 		}
 	}
 	
 	@IBAction func newGamePressed() {
+		let tracker = ETRTracker.shared()!
+		tracker.trackUserDefined("Button", action: "click", object: "New game", value: nil)
 		newGame()
 	}
 	
