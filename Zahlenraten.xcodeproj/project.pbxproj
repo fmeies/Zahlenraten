@@ -30,11 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		016F48FA249B9339000E033B /* libETRTracker-65196.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65196.a"; sourceTree = "<group>"; };
-		016F4900249B9500000E033B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0181E52828DC4D10008667EE /* ETRTracker-67179.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "ETRTracker-67179.xcframework"; sourceTree = "<group>"; };
 		018762521E59BFDD003E8619 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		019CFAC82607D1700028796F /* libETRTracker-65734.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65734.a"; sourceTree = "<group>"; };
 		01C90CF41A73E5F600E84282 /* Zahlenraten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zahlenraten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C90CF81A73E5F600E84282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C90CF91A73E5F600E84282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,14 +44,7 @@
 		01CBDC701A7507A100CAF472 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		01CBDC741A7519B700CAF472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Zahlenraten-Bridging-Header.h"; sourceTree = "<group>"; };
-		F421397C1E56EE7300CB3612 /* ETRTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTracker.h; sourceTree = "<group>"; };
-		F421397F1E57133400CB3612 /* libETRTracker-61537.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-61537.a"; sourceTree = "<group>"; };
-		F447022E2679E3BD000B46A7 /* libETRTracker-66010.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-66010.a"; sourceTree = "<group>"; };
-		F47E9F82254B13FE0014B3D1 /* libETRTracker-65453.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65453.a"; sourceTree = "<group>"; };
-		F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-64360.a"; sourceTree = "<group>"; };
-		F4C414B526652FFB00CCA73E /* libETRTracker-65975.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65975.a"; sourceTree = "<group>"; };
-		F4E29B3B2657E23B0047C64E /* libETRTracker-65958.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libETRTracker-65958.a"; sourceTree = "<group>"; };
-		F4E29B3C2657E23B0047C64E /* ETROrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETROrder.h; sourceTree = "<group>"; };
+		F4DF56B8296EECCB0074B044 /* ETRTracker-67511.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "ETRTracker-67511.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +69,6 @@
 		016F48FF249B9500000E033B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				016F4900249B9500000E033B /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,17 +145,8 @@
 		F421397B1E56E96600CB3612 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				F4DF56B8296EECCB0074B044 /* ETRTracker-67511.xcframework */,
 				0181E52828DC4D10008667EE /* ETRTracker-67179.xcframework */,
-				F421397F1E57133400CB3612 /* libETRTracker-61537.a */,
-				F4C0B6AA233A360A0023FC12 /* libETRTracker-64360.a */,
-				016F48FA249B9339000E033B /* libETRTracker-65196.a */,
-				F47E9F82254B13FE0014B3D1 /* libETRTracker-65453.a */,
-				019CFAC82607D1700028796F /* libETRTracker-65734.a */,
-				F4E29B3B2657E23B0047C64E /* libETRTracker-65958.a */,
-				F4C414B526652FFB00CCA73E /* libETRTracker-65975.a */,
-				F447022E2679E3BD000B46A7 /* libETRTracker-66010.a */,
-				F4E29B3C2657E23B0047C64E /* ETROrder.h */,
-				F421397C1E56EE7300CB3612 /* ETRTracker.h */,
 				F421397A1E56E6F800CB3612 /* Zahlenraten-Bridging-Header.h */,
 			);
 			name = Tracking;
@@ -357,6 +337,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -414,6 +395,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -448,6 +430,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Zahlenraten",
 				);
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riesenkalmar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -473,6 +456,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Zahlenraten",
 				);
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riesenkalmar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
